@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francis Phone Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="logo">Francis<span>Phones</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#phones">Phones</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <input type="text" id="search" placeholder="Search phones...">
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+        <div>
+            <h1>Get Your Dream Phone</h1>
+            <p>Quality smartphones at affordable prices.</p>
+            <a href="#phones" class="hero-btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Phones -->
+    <section class="phones" id="phones">
+        <h2>Our Latest Phones</h2>
+        <p class="subtitle">Choose from our collection</p>
+
+        <div class="product-container">
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=500&q=80"
+                    alt="iPhone 15">
+                <h3>iPhone 15</h3>
+                <p class="price">₦850,000</p>
+                <button onclick="buyPhone('iPhone 15')">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?auto=format&fit=crop&w=500&q=80"
+                    alt="Samsung Galaxy">
+                <h3>Samsung Galaxy S24</h3>
+                <p class="price">₦780,000</p>
+                <button onclick="buyPhone('Samsung Galaxy S24')">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"
+                    alt="iPhone 14">
+                <h3>iPhone 14</h3>
+                <p class="price">₦650,000</p>
+                <button onclick="buyPhone('iPhone 14')">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?auto=format&fit=crop&w=500&q=80"
+                    alt="Google Pixel">
+                <h3>Google Pixel 8</h3>
+                <p class="price">₦590,000</p>
+                <button onclick="buyPhone('Google Pixel 8')">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80"
+                    alt="Samsung A55">
+                <h3>Samsung A55</h3>
+                <p class="price">₦420,000</p>
+                <button onclick="buyPhone('Samsung A55')">Buy Now</button>
+            </div>
+
+            <div class="product">
+                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?auto=format&fit=crop&w=500&q=80"
+                    alt="Tecno Phone">
+                <h3>Tecno Camon</h3>
+                <p class="price">₦280,000</p>
+                <button onclick="buyPhone('Tecno Camon')">Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <h2>About Francis Phones</h2>
+        <p>
+            We provide quality smartphones at affordable prices.
+            Our goal is to help customers find reliable phones
+            that match their needs and budget.
+        </p>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Interested in a phone? Send us a message.</p>
+
+        <a class="whatsapp" href="https://wa.me/2349066949346" target="_blank">
+            Chat With Us on WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Francis Phones. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function buyPhone(phone) {
+            alert("You selected " + phone + ". Please contact us on WhatsApp to order.");
+        }
+
+        const search = document.getElementById("search");
+        const products = document.querySelectorAll(".product");
+
+        search.addEventListener("input", function () {
+            const searchText = search.value.toLowerCase();
+
+            products.forEach(function (product) {
+                const name = product.querySelector("h3").textContent.toLowerCase();
+
+                if (name.includes(searchText)) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
